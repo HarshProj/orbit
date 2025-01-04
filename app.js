@@ -14,6 +14,12 @@ connectDB();
 app.use(express.json());
 
 // Set up routes
+app.get('/',(req,res)=>{
+  res.json({msg:"Welcome to User-Transaction field",
+    userdetails:"use this url : /api/user/:id",
+    pagination:"use this url : /api/transactions?page=1&limit=10&status=success&type=credit"
+  });
+} );
 app.use('/api', userRoutes);
 app.use('/api', transactionRoutes);
 
